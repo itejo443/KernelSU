@@ -37,11 +37,10 @@
     <string name="module_uninstall_failed">無法解除安裝：%s</string>
     <string name="module_version">版本</string>
     <string name="module_author">作者</string>
-    <string name="module_overlay_fs_not_available">OverlayFS 已遭核心停用，無法使用模組功能。</string>
-    <string name="refresh">重新載入</string>
-    <string name="show_system_apps">顯示系統程式</string>
-    <string name="hide_system_apps">隱藏系統程式</string>
-    <string name="send_log">發送運作日誌</string>
+    <string name="refresh">重新整理</string>
+    <string name="show_system_apps">顯示系統應用程式</string>
+    <string name="hide_system_apps">隱藏系統應用程式</string>
+    <string name="send_log">傳送記錄</string>
     <string name="safe_mode">安全模式</string>
     <string name="reboot_to_apply">將在重新啟動時生效</string>
     <string name="module_magisk_conflict">與 Magisk 發生衝突，無法使用模組功能！</string>
