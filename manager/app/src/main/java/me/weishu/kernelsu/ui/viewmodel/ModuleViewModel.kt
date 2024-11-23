@@ -11,7 +11,6 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import me.weishu.kernelsu.ui.util.listModules
-import me.weishu.kernelsu.ui.util.overlayFsAvailable
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -47,11 +46,9 @@ class ModuleViewModel : ViewModel() {
     var isRefreshing by mutableStateOf(false)
         private set
 
-    var isOverlayAvailable by mutableStateOf(overlayFsAvailable())
-        private set
-
     var sortEnabledFirst by mutableStateOf(false)
     var sortActionFirst by mutableStateOf(false)
+
     val moduleList by derivedStateOf {
         val comparator =
             compareBy<ModuleInfo>(
@@ -79,8 +76,6 @@ class ModuleViewModel : ViewModel() {
             val start = SystemClock.elapsedRealtime()
 
             kotlin.runCatching {
-                isOverlayAvailable = overlayFsAvailable()
-
                 val result = listModules()
 
                 Log.i(TAG, "result: $result")
