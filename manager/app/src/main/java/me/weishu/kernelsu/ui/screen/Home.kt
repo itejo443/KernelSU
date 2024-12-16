@@ -453,6 +453,11 @@ fun Unofficial() {
                 Text(
                     text = stringResource(R.string.home_unofficial_kernelsu_body),
                     style = MaterialTheme.typography.bodyMedium
+                )                         
+                Spacer(Modifier.height(4.dp))
+                Text(
+                    text = stringResource(R.string.home_n3x7g3n_kernelsu_body),
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
         }
