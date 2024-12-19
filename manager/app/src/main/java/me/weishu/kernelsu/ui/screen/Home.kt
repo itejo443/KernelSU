@@ -456,7 +456,7 @@ fun Unofficial() {
                 )                         
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = stringResource(R.string.home_n3x7g3n_kernelsu_body),
+                    text = stringResource(R.string.home_itejo443_kernelsu_body),
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
