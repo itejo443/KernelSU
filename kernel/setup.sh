@@ -31,19 +31,19 @@ perform_cleanup() {
     [ -L "$DRIVER_DIR/kernelsu" ] && rm "$DRIVER_DIR/kernelsu" && echo "[-] Symlink removed."
     grep -q "kernelsu" "$DRIVER_MAKEFILE" && sed -i '/kernelsu/d' "$DRIVER_MAKEFILE" && echo "[-] Makefile reverted."
     grep -q "drivers/kernelsu/Kconfig" "$DRIVER_KCONFIG" && sed -i '/drivers\/kernelsu\/Kconfig/d' "$DRIVER_KCONFIG" && echo "[-] Kconfig reverted."
-    if [ -d "$GKI_ROOT/KernelSU-Next" ]; then
-        rm -rf "$GKI_ROOT/KernelSU-Next" && echo "[-] KernelSU-Next directory deleted."
+    if [ -d "$GKI_ROOT/KernelSU" ]; then
+        rm -rf "$GKI_ROOT/KernelSU" && echo "[-] KernelSU directory deleted."
     fi
 }
 
 # Sets up or update KernelSU environment
 setup_kernelsu() {
-    echo "[+] Setting up KernelSU-Next..."
-    test -d "$GKI_ROOT/KernelSU-Next" || git clone -b susfs-4.19 https://github.com/itejo443/KernelSU && echo "[+] Repository cloned."
-    cd "$GKI_ROOT/KernelSU-Next"
+    echo "[+] Setting up KernelSU..."
+    test -d "$GKI_ROOT/KernelSU" || git clone -b susfs-4.19 https://github.com/itejo443/KernelSU && echo "[+] Repository cloned."
+    cd "$GKI_ROOT/KernelSU"
     git stash && echo "[-] Stashed current changes."
     if [ "$(git status | grep -Po 'v\d+(\.\d+)*' | head -n1)" ]; then
-        git checkout next && echo "[-] Switched to next branch."
+        git checkout next && echo "[-] Switched to susfs branch."
     fi
     git pull && echo "[+] Repository updated."
     if [ -z "${1-}" ]; then
