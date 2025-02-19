@@ -198,8 +198,6 @@ int ksu_handle_devpts(struct inode *inode)
 	return 0;
 }
 
-#ifdef CONFIG_KPROBES
-
 __maybe_unused static int faccessat_handler_pre(struct kprobe *p,
 						struct pt_regs *regs)
 {
